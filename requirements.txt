@@ -1,0 +1,8 @@
+Pillow
+requests
+CTkTable
+yt_dlp
+pyinstaller
+uuid
+pywinstyles
+edge_tts
