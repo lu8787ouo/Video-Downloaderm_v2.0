@@ -104,6 +104,8 @@ def download_video_audio_playlist_with_retry(url, resolution, download_path, fil
 def download_video_audio_playlist(url, resolution, download_path, file_format, cookiefile=''):
     temp_id = uuid.uuid4().hex
     final_filepath = None
+    ffmpeg_path = os.path.join(os.path.dirname(__file__), 'ffmpeg', 'bin', 'ffmpeg.exe')
+    ydl_opts['ffmpeg_location'] = ffmpeg_path
     if file_format == 'mp4':
         try:
             # 解析如 "1080p", "720p" 這種格式，只保留數字部分作為 height

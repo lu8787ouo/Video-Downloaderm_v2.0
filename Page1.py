@@ -106,6 +106,8 @@ def get_video_info(url, file_format="mp4", cookiefile=''):
 def download_video_audio(url, resolution, download_path, file_format, download_subtitles, subtitle_lang, cookiefile='', progress_callback=None):
     logger.info("Starting to download video/audio from URL: %s", url)
     final_filepath = None
+    ffmpeg_path = os.path.join(os.path.dirname(__file__), 'ffmpeg', 'bin', 'ffmpeg.exe')
+    ydl_opts['ffmpeg_location'] = ffmpeg_path
     if file_format == 'mp4':
         # 從解析度字串中取得寬高，例如 "1920x1080"
         try:
